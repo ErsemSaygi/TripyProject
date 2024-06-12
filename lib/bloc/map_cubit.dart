@@ -40,10 +40,10 @@ class MapCubit extends Cubit<MapStatus> {
     final position = await Geolocator.getCurrentPosition();
     userLocation = LatLng(position.latitude, position.longitude);
      initialCameraPosition = CameraPosition(target: userLocation, zoom: 12.0);
-    _getInitAllData();
+    getInitAllData();
   }
 
-  Future<void> _getInitAllData() async {
+  Future<void> getInitAllData() async {
     allItems = generateUsers(userLocation);
     manager = initClusterManager();
 
