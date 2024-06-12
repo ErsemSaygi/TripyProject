@@ -23,7 +23,7 @@ dependencies:
   loading_animation_widget: ^1.2.1
   mockito: ^5.0.14
   cupertino_icons: ^1.0.2
-
+  bloc_test: ^8.0.1
 dev_dependencies:
   flutter_test:
     sdk: flutter

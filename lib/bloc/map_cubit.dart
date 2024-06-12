@@ -27,7 +27,7 @@ class MapCubit extends Cubit<MapStatus> {
   GoogleMapController? googleMapController;
 
   MapCubit() : super(MapStatus.loading) {
-    _requestLocationPermission();
+    requestLocationPermission();
   }
 
   /// Requests location permission and initializes the map.
@@ -35,7 +35,7 @@ class MapCubit extends Cubit<MapStatus> {
   /// This method requests the user's location permission, retrieves the current
   /// position, initializes the map with the user's location, and fetches initial
   /// data.
-  Future<void> _requestLocationPermission() async {
+  Future<void> requestLocationPermission() async {
     emit(MapStatus.loading);
     final position = await Geolocator.getCurrentPosition();
     userLocation = LatLng(position.latitude, position.longitude);
