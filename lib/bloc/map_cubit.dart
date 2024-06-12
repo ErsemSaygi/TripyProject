@@ -45,7 +45,7 @@ class MapCubit extends Cubit<MapStatus> {
 
   Future<void> _getInitAllData() async {
     allItems = generateUsers(userLocation);
-    manager = _initClusterManager();
+    manager = initClusterManager();
 
   }
 
@@ -55,7 +55,7 @@ class MapCubit extends Cubit<MapStatus> {
   ///
   /// This method initializes the cluster manager with the list of all items,
   /// updates the markers on the map, and sets the marker builder.
-  ClusterManager _initClusterManager() {
+  ClusterManager initClusterManager() {
     emit(MapStatus.loaded);
     return ClusterManager<User>(
       allItems,

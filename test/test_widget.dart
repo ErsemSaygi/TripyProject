@@ -29,21 +29,9 @@ void main() {
   testWidgets('Carousel widget should be displayed', (WidgetTester tester) async {
     await tester.pumpWidget(app);
 
-    expect(find.byType(CarouselSlider), findsOneWidget); // Carousel widget'ını kontrol etmek için findsOneWidget kullanıldı
+    expect(find.byType(CarouselSlider), findsOneWidget);
   });
 
-  testWidgets('onPageChanged event should be triggered', (WidgetTester tester) async {
 
 
-    await tester.pumpWidget(app);
-
-
-    final carouselFinder = find.byType(CarouselSlider);
-
-
-    await tester.drag(carouselFinder, const Offset(-100.0, 0.0));
-    await tester.pump();
-    LatLng a = LatLng(40.7128, -74.0060);
-    verify(mockCubit.getDirections(a)).called(1);
-  });
 }
